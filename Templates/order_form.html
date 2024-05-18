@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Order</title>
+</head>
+<body>
+    <h1>Add Order</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('add_order') }}">
+        <label for="CustomerID">Customer ID:</label>
+        <input type="number" name="CustomerID" id="CustomerID" required>
+        <br>
+        <label for="OrderDate">Order Date:</label>
+        <input type="date" name="OrderDate" id="OrderDate" required>
+        <br>
+        <input type="submit" value="Add Order">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Sales</title>
+</head>
+<body>
+    <h1>Monthly Sales in 2023</h1>
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Total Orders</th>
+            <th>Total Sales</th>
+        </tr>
+        {% for sale in monthly_sales %}
+        <tr>
+            <td>{{ sale.Month }}</td>
+            <td>{{ sale.TotalOrders }}</td>
+            <td>{{ sale.TotalSales }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

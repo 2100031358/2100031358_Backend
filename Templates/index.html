@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retail Store</title>
+</head>
+<body>
+    <h1>Welcome to the Retail Store</h1>
+    <nav>
+        <h2>Display Tables</h2>
+        <ul>
+            <li><a href="{{ url_for('customers') }}">Customers</a></li>
+            <li><a href="{{ url_for('products') }}">Products</a></li>
+            <li><a href="{{ url_for('orders') }}">Orders</a></li>
+            <li><a href="{{ url_for('order_items') }}">Order Items</a></li>
+        </ul>
+        <h2>Add Details</h2>
+        <ul>
+            <li><a href="{{ url_for('add_customer') }}">Add Customer</a></li>
+            <li><a href="{{ url_for('add_product') }}">Add Product</a></li>
+            <li><a href="{{ url_for('add_order') }}">Add Order</a></li>
+            <li><a href="{{ url_for('add_order_item') }}">Add Order Item</a></li>
+        </ul>
+        <h2>Queries</h2>
+        <ul>
+            <li><a href="{{ url_for('list_customers') }}">All Customer</a></li>
+            <li><a href="{{ url_for('orders_january_2023') }}">Orders in January 2023</a></li>
+            <li><a href="{{ url_for('order_details') }}">Order Details with Customer Email</a></li>
+            <li><a href="{{ url_for('order_products', order_id=1) }}">Products in Order</a></li>
+            <li><a href="{{ url_for('customer_spending') }}">Customer Spendings</a></li>            
+            <li><a href="{{ url_for('most_popular_product') }}">Most Popular Product</a></li>
+            <li><a href="{{ url_for('monthly_sales') }}">Monthly Sales</a></li>
+            <li><a href="{{ url_for('big_spender') }}">Big Spenders</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

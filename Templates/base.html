@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add_customer">Add Customer</a></li>
+            <li><a href="/add_product">Add Product</a></li>
+            <li><a href="/add_order">Add Order</a></li>
+            <li><a href="/add_order_item">Add Order Item</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

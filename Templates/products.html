@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <h1>Products</h1>
+    <table border="1">
+        <tr>
+            <th>ProductID</th>
+            <th>ProductName</th>
+            <th>Price</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.ProductID }}</td>
+            <td>{{ product.ProductName }}</td>
+            <td>{{ product.Price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

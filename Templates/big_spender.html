@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Spenders</title>
+</head>
+<body>
+    <h1>Big Spenders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Total Spent ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for spender in big_spenders %}
+            <tr>
+                <td>{{ spender.CustomerID }}</td>
+                <td>{{ spender.FirstName }} {{ spender.LastName }}</td>
+                <td>{{ spender.TotalSpent }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

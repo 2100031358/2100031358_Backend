@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Popular Product</title>
+</head>
+<body>
+    <h1>Most Popular Product</h1>
+    {% if popular_product %}
+    <p>The most popular product is {{ popular_product.ProductName }} with {{ popular_product.TotalOrders }} orders.</p>
+    {% else %}
+    <p>No orders found.</p>
+    {% endif %}
+</body>
+</html>
