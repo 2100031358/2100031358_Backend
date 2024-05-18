@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Items</title>
+</head>
+<body>
+    <h1>Order Items</h1>
+    <table border="1">
+        <tr>
+            <th>OrderItemID</th>
+            <th>OrderID</th>
+            <th>ProductID</th>
+            <th>Quantity</th>
+        </tr>
+        {% for item in order_items %}
+        <tr>
+            <td>{{ item.OrderItemID }}</td>
+            <td>{{ item.OrderID }}</td>
+            <td>{{ item.ProductID }}</td>
+            <td>{{ item.Quantity }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Order Item</title>
+</head>
+<body>
+    <h1>Add Order Item</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('add_order_item') }}">
+        <label for="OrderID">Order ID:</label>
+        <input type="number" name="OrderID" id="OrderID" required>
+        <br>
+        <label for="ProductID">Product ID:</label>
+        <input type="number" name="ProductID" id="ProductID" required>
+        <br>
+        <label for="Quantity">Quantity:</label>
+        <input type="number" name="Quantity" id="Quantity" required>
+        <br>
+        <input type="submit" value="Add Order Item">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

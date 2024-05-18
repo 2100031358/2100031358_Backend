@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+</head>
+<body>
+    <h1>Add Customer</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST" action="{{ url_for('add_customer') }}">
+        <label for="FirstName">First Name:</label>
+        <input type="text" name="FirstName" id="FirstName" required>
+        <br>
+        <label for="LastName">Last Name:</label>
+        <input type="text" name="LastName" id="LastName" required>
+        <br>
+        <label for="Email">Email:</label>
+        <input type="email" name="Email" id="Email" required>
+        <br>
+        <label for="DateOfBirth">Date of Birth:</label>
+        <input type="date" name="DateOfBirth" id="DateOfBirth" required>
+        <br>
+        <input type="submit" value="Add Customer">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

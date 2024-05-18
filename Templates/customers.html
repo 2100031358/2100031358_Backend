@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+</head>
+<body>
+    <h1>Customers</h1>
+    <table border="1">
+        <tr>
+            <th>CustomerID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>DateOfBirth</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.CustomerID }}</td>
+            <td>{{ customer.FirstName }}</td>
+            <td>{{ customer.LastName }}</td>
+            <td>{{ customer.Email }}</td>
+            <td>{{ customer.DateOfBirth }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
